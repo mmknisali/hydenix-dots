@@ -3,6 +3,7 @@
 {
   imports = [
     # ./example.nix - add your modules here
+      ./lazy.nix
   ];
 
   # home-manager options go here

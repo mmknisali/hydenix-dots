@@ -8,10 +8,11 @@
     };
     hydenix.url = "github:richen604/hydenix";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    lazyvim.url = "github:pfassina/lazyvim-nix";
    };
 
   outputs =
-    { ... }@inputs:
+    { lazyvim, ... }@inputs:
     let
       hydenixConfig = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
