@@ -4,6 +4,7 @@
   ...
 }:
   # FOLLOW THE BELOW INSTRUCTIONS LINE BY LINE TO SET UP YOUR SYSTEM
+  nix.settings.trusted-users = [ "root" "ali" ];
 {
   imports = [
     # hydenix inputs - Required modules, don't modify unless you know what you're doing
@@ -35,7 +36,7 @@
      prime = { # For hybrid graphics (laptops), configure PRIME:
   #     amdBusId = "PCI:0:2:0"; # Run `lspci | grep VGA` to get correct bus IDs
        intelBusId = "PCI:0:2:0"; # if you have intel graphics
-       nvidiaBusId = "PCI:2:0:0";
+       nvidiaBusId = "PCI:02:0:0";
   #     offload.enable = false; # Or disable PRIME offloading if you don't care
      };
    };
@@ -74,7 +75,7 @@
     enable = true; # Enable Hydenix modules
     # Basic System Settings (REQUIRED):
     hostname = "ClaraNix"; # REQUIRED: Set your computer's network name (change to something unique)
-    timezone = "America/Vancouver"; # REQUIRED: Set timezone (examples: "America/New_York", "Europe/London", "Asia/Tokyo")
+    timezone = "Asia/Istanbul"; # REQUIRED: Set timezone (examples: "America/New_York", "Europe/London", "Asia/Tokyo")
     locale = "en_CA.UTF-8"; # REQUIRED: Set locale/language (examples: "en_US.UTF-8", "en_GB.UTF-8", "de_DE.UTF-8")
     # For more configuration options, see: ./docs/options.md
   };
@@ -83,7 +84,6 @@
        nix.extraOptions = ''
          extra-substituters = https://devenv.cachix.org
          extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
-         nix.settings.trusted-users = [ "root" "ali" ];
        '';
 
   # System Version - Don't change unless you know what you're doing (helps with system upgrades and compatibility)
