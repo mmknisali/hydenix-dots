@@ -83,6 +83,7 @@
        nix.extraOptions = ''
          extra-substituters = https://devenv.cachix.org
          extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
+         nix.settings.trusted-users = [ "root" "ali" ];
        '';
 
   # System Version - Don't change unless you know what you're doing (helps with system upgrades and compatibility)
