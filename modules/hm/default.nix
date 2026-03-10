@@ -29,8 +29,16 @@ hydenix.hm.shell.zsh.configText = ''
   hydenix.hm.editors.neovim = false;
 
   # Hyprland native gestures - three finger swipe down to lock
+  home.file.".config/hypr/gestures.conf".text = ''
+    gestures {
+      enabled = true
+    }
+    gesture = 3, down, exec, hyprlock
+  '';
+
+  # Source gestures.conf
   hydenix.hm.hyprland.extraConfig = ''
-    gesture = 3, down, dispatcher, exec, hyprlock
+    source = $HOME/.config/hypr/gestures.conf
   '';
 
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
