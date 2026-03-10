@@ -20,6 +20,7 @@
 #direnv 
 hydenix.hm.shell.zsh.configText = ''
   eval "$(direnv hook zsh)"
+
 '';
 
 

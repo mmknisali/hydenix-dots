@@ -4,9 +4,11 @@
   ...
 }:
   # FOLLOW THE BELOW INSTRUCTIONS LINE BY LINE TO SET UP YOUR SYSTEM
-  nix.settings.trusted-users = [ "root" "ali" ];
-{
-  imports = [
+ {
+  #trusted user
+  nix.settings.trusted-users = [  "ali" ];
+
+ imports = [
     # hydenix inputs - Required modules, don't modify unless you know what you're doing
     inputs.hydenix.inputs.home-manager.nixosModules.home-manager
     inputs.hydenix.nixosModules.default
@@ -32,11 +34,11 @@
 
   # If enabling NVIDIA, you will be prompted to configure hardware.nvidia
    hardware.nvidia = {
-     open = true; # For newer cards, you may want open drivers
+     open = false; # For newer cards, you may want open drivers
      prime = { # For hybrid graphics (laptops), configure PRIME:
   #     amdBusId = "PCI:0:2:0"; # Run `lspci | grep VGA` to get correct bus IDs
        intelBusId = "PCI:0:2:0"; # if you have intel graphics
-       nvidiaBusId = "PCI:02:0:0";
+       nvidiaBusId = "PCI:2:0:0";
   #     offload.enable = false; # Or disable PRIME offloading if you don't care
      };
    };
