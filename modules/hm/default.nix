@@ -27,5 +27,11 @@ hydenix.hm.shell.zsh.configText = ''
   # hydenix home-manager options go here
   hydenix.hm.enable = true;
   hydenix.hm.editors.neovim = false;
- # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
+
+  # Hyprland native gestures - three finger swipe down to lock
+  hydenix.hm.hyprland.extraConfig = ''
+    gesture = 3, down, dispatcher, exec, hyprlock
+  '';
+
+  # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
 }
